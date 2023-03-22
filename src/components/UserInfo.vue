@@ -157,11 +157,8 @@ export default {
   margin: 0 auto;
   padding: 0 1rem;
   max-width: 800px;
-&__text {
-  margin-bottom: 1rem;
-}
-}
-.accordion-button {
-  padding: 0;
+  &__text {
+    margin-bottom: 1rem;
+  }
 }
 </style>
