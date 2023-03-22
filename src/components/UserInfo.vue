@@ -37,7 +37,6 @@
       <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
         data-bs-parent="#accordionExample">
         <div class="accordion-body">
-
           <h5>
             ISP:
             <small class="text-muted">{{ isp }}</small>
@@ -54,7 +53,6 @@
             Region:
             <small class="text-muted">{{ region }}</small>
           </h5>
-
         </div>
       </div>
     </div>
