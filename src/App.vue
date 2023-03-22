@@ -5,7 +5,6 @@
     </router-view>
       </div>
 </template>
-
 <script>
 export default {
   name: "App"
@@ -22,5 +21,4 @@ export default {
   text-decoration: none;
   color: #fff;
 }
-
 </style>

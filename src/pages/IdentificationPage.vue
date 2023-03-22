@@ -5,8 +5,15 @@
     </nav-bar>
     <div class="identification-page__main">
       <div class="input-group mb-3">
-        <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2"
-          placeholder="enter your zip code" v-model="zip">
+        <input 
+          type="text" 
+          class="form-control" 
+          aria-label="Recipient's username" 
+          aria-describedby="button-addon2"
+          placeholder="enter your zip code" 
+          v-model="zip"
+          v-on:keypress="getUserInfoByEnter"
+        >
         <button class="btn btn-outline-primary" type="button" id="button-addon2" @click="getUserInfo">
           Get data
         </button>
@@ -35,13 +42,16 @@ export default {
       this.fetchLocation();
     },
     fetchLocation() {
-      const apiKey = 'AIzaSyCEELEMOijcmwAieMuhF5nKyHjhcqm_RNk'
-      const url = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
-      fetch(`${url}${this.zip}&key=${apiKey}`)
+      fetch(`${process.env.VUE_APP_GOOGLE_URL}${this.zip}&key=${process.env.VUE_APP_GOOGLE_KEY}`)
         .then(response => response.json())
         .then(data => {
           this.user = data.results[0].address_components;
         });
+    },
+    getUserInfoByEnter(event) {
+      if (event.key === 'Enter') {
+        this.fetchLocation();
+      }
     },
   }
 }

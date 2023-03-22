@@ -6,5 +6,5 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 
 const app = createApp(App);
-app.component('nav-bar', NavBar)
+app.component('NavBar', NavBar)
 app.use(router).mount('#app')
